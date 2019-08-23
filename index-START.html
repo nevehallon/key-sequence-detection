@@ -7,6 +7,19 @@
 </head>
 <body>
 <script>
+  const keyLog = []
+  const trueKey = 'wesbos';
+
+  function detector(e) {
+    keyLog.push(e.key);
+    keyLog.splice(-trueKey.length - 1, keyLog.length - trueKey.length);
+    if (keyLog.join('') === trueKey) {
+      console.log('good job!');
+      cornify_add();
+    }
+    console.log(keyLog);
+  }
+  document.addEventListener('keyup', detector);
 </script>
 </body>
 </html>
